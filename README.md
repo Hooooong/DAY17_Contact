@@ -67,7 +67,7 @@ ____________________________________________________
 
 ##### __Content Provider__
 
-![Provider & Resolver] (https://github.com/Hooooong/DAY17_Contact/blob/master/image/Resolver.PNG)
+![Provider & Resolver](https://github.com/Hooooong/DAY17_Contact/blob/master/image/Resolver.PNG)
 
 - Provider & Resolver 란?
 
