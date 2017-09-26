@@ -5,11 +5,11 @@ Android Programing
 #### 예제
 ____________________________________________________
 
-- [주소록 가져오기]()
+- [주소록 가져오기](https://github.com/Hooooong/DAY17_Contact/blob/master/app/src/main/java/com/hooooong/contact/MainActivity.java)
 
-- [Gallery & Camera 사용하기]()
+- [Gallery & Camera 사용하기](https://github.com/Hooooong/DAY17_Gallery)
 
-- [CustomGallery 만들기]()
+- [CustomGallery 만들기](https://github.com/Hooooong/DAY17_CustomGallery)
 
 #### 공부정리
 ____________________________________________________
