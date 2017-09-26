@@ -5,11 +5,11 @@ Android Programing
 #### 예제
 ____________________________________________________
 
-- 주소록 가져오기
+- [주소록 가져오기]()
 
-- Gallery & Camera 사용하기
+- [Gallery & Camera 사용하기]()
 
-- CustomGallery 만들기
+- [CustomGallery 만들기]()
 
 #### 공부정리
 ____________________________________________________
@@ -63,11 +63,11 @@ ____________________________________________________
   Intent intent = new Intent("action.customaction");
   startActivity(intent);
   ```
-- 참조 : [Intent]()
+- 참조 : [Intent](https://github.com/Hooooong/DAY17_Contact/blob/master/pdf/007_Intent.pdf)
 
 ##### __Content Provider__
 
-![Provider & Resolver] ()
+![Provider & Resolver] (https://github.com/Hooooong/DAY17_Contact/blob/master/image/Resolver.PNG)
 
 - Provider & Resolver 란?
 
