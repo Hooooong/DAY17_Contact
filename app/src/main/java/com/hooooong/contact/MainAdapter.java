@@ -21,8 +21,12 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.Holder> {
 
     List<Contact> contactList;
 
-    public MainAdapter(List<Contact> contactList) {
+    public MainAdapter() {
+    }
+
+    public void addData(List<Contact> contactList){
         this.contactList = contactList;
+        notifyDataSetChanged();
     }
 
     @Override

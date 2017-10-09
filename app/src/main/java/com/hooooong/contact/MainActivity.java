@@ -41,9 +41,11 @@ public class MainActivity extends BaseActivity {
     public void init(){
         setContentView(R.layout.activity_main);
         recyclerView = (RecyclerView)findViewById(R.id.recyclerView);
-        MainAdapter adapter = new MainAdapter(load());
+        MainAdapter adapter = new MainAdapter();
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(adapter);
+
+        adapter.addData(load());
     }
 
     private List<Contact> load(){
@@ -77,6 +79,13 @@ public class MainActivity extends BaseActivity {
 
                 index =cursor.getColumnIndex(projection[2]);
                 contact.setNumber(cursor.getString(index));
+
+                index = cursor.getColumnIndex(projection[3]);
+
+                if(cursor.getString(index) != null){
+                    String path = cursor.getString(index);
+                    contact.setThumbnail(path);
+                }
                 contactList.add(contact);
             }
         }
