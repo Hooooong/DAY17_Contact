@@ -7,6 +7,7 @@ import android.net.Uri;
 import android.provider.ContactsContract;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 
 import com.hooooong.contact.model.Contact;
 
@@ -71,18 +72,18 @@ public class MainActivity extends BaseActivity {
         if(cursor != null){
             while(cursor.moveToNext()){
                 Contact contact = new Contact();
-                int index =cursor.getColumnIndex(projection[0]);
+                int index = cursor.getColumnIndex(projection[0]);
                 contact.setId(cursor.getInt(index));
 
-                index =cursor.getColumnIndex(projection[1]);
+                index = cursor.getColumnIndex(projection[1]);
                 contact.setName(cursor.getString(index));
 
-                index =cursor.getColumnIndex(projection[2]);
+                index = cursor.getColumnIndex(projection[2]);
                 contact.setNumber(cursor.getString(index));
 
                 index = cursor.getColumnIndex(projection[3]);
 
-                if(cursor.getString(index) != null){
+                if (cursor.getString(index) != null) {
                     String path = cursor.getString(index);
                     contact.setThumbnail(path);
                 }

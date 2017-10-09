@@ -3,6 +3,7 @@ package com.hooooong.contact;
 import android.content.Intent;
 import android.net.Uri;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,7 +25,7 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.Holder> {
     public MainAdapter() {
     }
 
-    public void addData(List<Contact> contactList){
+    public void addData(List<Contact> contactList) {
         this.contactList = contactList;
         notifyDataSetChanged();
     }
@@ -40,6 +41,9 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.Holder> {
         holder.setTextId(contactList.get(position).getId());
         holder.setTextName(contactList.get(position).getName());
         holder.setTextPhoneNumber(contactList.get(position).getNumber());
+        if (contactList.get(position).getThumbnail() != null) {
+            holder.setThumbnail(contactList.get(position).getThumbnail());
+        }
     }
 
     @Override
@@ -50,7 +54,7 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.Holder> {
     public class Holder extends RecyclerView.ViewHolder {
 
         private TextView textId, textName, textPhoneNumber;
-        private ImageView imageView;
+        private ImageView imageView, thumbnail;
 
         public Holder(View itemView) {
             super(itemView);
@@ -71,7 +75,7 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.Holder> {
         }
 
         public void setTextId(int id) {
-            textId.setText(id+"");
+            textId.setText(id + "");
         }
 
         public void setTextName(String name) {
@@ -82,11 +86,16 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.Holder> {
             textPhoneNumber.setText(phone);
         }
 
-        public void initView(View initView){
+        public void setThumbnail(String path) {
+            thumbnail.setImageURI(Uri.parse(path));
+        }
+
+        public void initView(View initView) {
             textId = (TextView) itemView.findViewById(R.id.textId);
             textName = (TextView) itemView.findViewById(R.id.textName);
             textPhoneNumber = (TextView) itemView.findViewById(R.id.textPhoneNumber);
             imageView = (ImageView) itemView.findViewById(R.id.imageView);
+            thumbnail = (ImageView) itemView.findViewById(R.id.thumbnail);
         }
     }
 }
